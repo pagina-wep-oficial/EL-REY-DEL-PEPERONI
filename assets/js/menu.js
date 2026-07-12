@@ -276,9 +276,70 @@
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
-    if (modal.classList.contains('open')) closeProductModal();
+    const tutorialOverlay = document.getElementById('tutorialOverlay');
+    const pvModal = document.getElementById('productViewModal');
+    if (tutorialOverlay && tutorialOverlay.classList.contains('open')) {
+      tutorialOverlay.classList.remove('open');
+      localStorage.setItem('rey_del_peperoni_tutorial', 'done');
+    }
+    else if (pvModal && pvModal.classList.contains('open')) closeProductView();
+    else if (modal.classList.contains('open')) closeProductModal();
     else if (cartPanel.classList.contains('open')) closeCartPanel();
   });
 
   renderCart();
+
+  // ========== INYECTAR BOTÓN "VER PLATILLO" ==========
+  const pvModal = document.getElementById('productViewModal');
+  const pvClose = document.getElementById('pvClose');
+  const pvTitle = document.getElementById('pvTitle');
+  const pvDesc = document.getElementById('pvDesc');
+  const pvTag = document.getElementById('pvTag');
+
+  function openProductView(name, desc, tag) {
+    pvTitle.textContent = name;
+    pvDesc.textContent = desc || 'Descripción próximamente.';
+    if (pvTag) pvTag.textContent = tag || 'Producto';
+    pvModal.classList.add('open');
+    pvModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProductView() {
+    pvModal.classList.remove('open');
+    pvModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.menu-item-card').forEach(function(card) {
+    var addBtn = card.querySelector('.item-add');
+    if (!addBtn) return;
+    if (card.querySelector('.item-buttons')) return;
+
+    var descEl = card.querySelector('p');
+    var tagEl = card.querySelector('.item-tag');
+    var name = card.dataset.name || 'Producto';
+    var desc = descEl ? descEl.textContent.trim() : '';
+    var tag = tagEl ? tagEl.textContent.trim() : 'Producto';
+
+    var wrap = document.createElement('div');
+    wrap.className = 'item-buttons';
+    addBtn.parentNode.insertBefore(wrap, addBtn);
+    wrap.appendChild(addBtn);
+
+    var viewBtn = document.createElement('button');
+    viewBtn.className = 'item-view';
+    viewBtn.type = 'button';
+    viewBtn.textContent = 'Ver platillo';
+    wrap.appendChild(viewBtn);
+
+    viewBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openProductView(name, desc, tag);
+    });
+  });
+
+  if (pvClose) pvClose.addEventListener('click', closeProductView);
+  if (pvModal) pvModal.addEventListener('click', function(e) { if (e.target === pvModal) closeProductView(); });
+
 })();

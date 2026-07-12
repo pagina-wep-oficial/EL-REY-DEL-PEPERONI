@@ -36,6 +36,11 @@ button, input, textarea { font: inherit; }
 button { color: inherit; }
 .container { width: min(var(--container), 92%); margin-inline: auto; }
 
+.ico { display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; flex-shrink: 0; }
+.ico svg { display: block; }
+.ico-contact { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 14px; background: var(--yellow); color: var(--black); flex-shrink: 0; }
+.ico-contact svg { display: block; }
+
 .skip-link {
   position: fixed;
   left: 14px;
@@ -437,7 +442,7 @@ h3 { font-size: 1.4rem; }
 .delivery-note { margin: 20px 0 0; color: #6a4d16; font-size: .86rem; }
 .contact-visual { position: relative; min-height: 470px; }
 .contact-pizza { width: 100%; height: 470px; object-fit: cover; border-radius: 28px; }
-.qr-card { position: absolute; z-index: 2; left: -28px; bottom: 28px; width: min(360px, 88%); display: flex; align-items: center; gap: 14px; padding: 13px; border-radius: 20px; background: var(--white); box-shadow: var(--shadow); }
+.qr-card { position: absolute; z-index: 2; left: -28px; bottom: 28px; width: min(360px, 88%); display: flex; align-items: center; gap: 14px; padding: 13px; border-radius: 20px; background: var(--white); box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.12); border: 1px solid rgba(0,0,0,0.06); }
 .qr-card img { width: 90px; height: 90px; border-radius: 12px; }
 .qr-card strong, .qr-card span { display: block; }
 .qr-card span { color: var(--muted); font-size: .83rem; }
@@ -546,6 +551,10 @@ h3 { font-size: 1.4rem; }
 .item-add:hover { background: var(--yellow); }
 .item-add span { font-size: 1.25rem; }
 .item-add.added { background: #dff6e5; color: #1f7336; }
+.item-buttons { display: flex; gap: 8px; margin-top: auto; }
+.item-buttons .item-add { width: 50%; justify-content: center; gap: 6px; }
+.item-view { width: 50%; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 10px; border: 2px solid var(--line); border-radius: 14px; background: var(--white); color: var(--muted); font-weight: 700; font-size: .8rem; cursor: pointer; transition: .2s ease; }
+.item-view:hover { border-color: var(--yellow); background: #fffdf0; color: var(--black); }
 
 .no-results { text-align: center; padding: 70px 20px; border: 2px dashed var(--line); border-radius: 28px; background: rgba(255,255,255,.55); }
 .no-results span { font-size: 4rem; }

@@ -9,6 +9,205 @@
   <meta name="theme-color" content="#efb512">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* ===== TUTORIAL ===== */
+    .tutorial-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(6px);
+    }
+    .tutorial-overlay.open { display: flex; }
+    .tutorial-card {
+      background: #fffdf6;
+      border-radius: 32px;
+      max-width: 480px;
+      width: 100%;
+      padding: 32px 28px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+      position: relative;
+      animation: modalFade 0.3s ease;
+      text-align: center;
+    }
+    @keyframes modalFade {
+      from { opacity: 0; transform: scale(0.92) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .tutorial-card .step-indicator {
+      font-size: 0.85rem;
+      color: #6f6758;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.06em;
+    }
+    .tutorial-card h3 {
+      font-size: 1.6rem;
+      margin: 0 0 12px;
+      color: #11100d;
+    }
+    .tutorial-card p {
+      font-size: 1.05rem;
+      color: #6f6758;
+      line-height: 1.7;
+      margin: 0 0 24px;
+    }
+    .tutorial-card .tutorial-icon {
+      font-size: 3rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .tutorial-card .tutorial-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tutorial-card .tutorial-actions button {
+      padding: 10px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+    .tutorial-card .btn-skip {
+      background: transparent;
+      color: #6f6758;
+      border: 2px solid rgba(17,16,13,0.12);
+    }
+    .tutorial-card .btn-skip:hover {
+      background: rgba(17,16,13,0.12);
+      color: #11100d;
+    }
+    .tutorial-card .btn-next {
+      background: #f6be12;
+      color: #11100d;
+      box-shadow: 0 8px 24px rgba(246,190,18,0.3);
+    }
+    .tutorial-card .btn-next:hover {
+      background: #e22528;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .tutorial-card .btn-done {
+      background: #e22528;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(226,37,40,0.3);
+    }
+    .tutorial-card .btn-done:hover {
+      background: #f6be12;
+      color: #11100d;
+      transform: translateY(-2px);
+    }
+
+    /* ===== BOTONES FLOTANTES: WhatsApp + Ayuda ===== */
+    .floating-buttons-menu {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 160;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    .floating-buttons-menu .floating-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      font-size: 1.6rem;
+      box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+      text-decoration: none;
+      transition: transform 0.2s;
+      position: static;
+      margin: 0;
+      z-index: auto;
+      padding: 0;
+      min-height: 56px;
+    }
+    .floating-buttons-menu .floating-whatsapp:hover {
+      transform: scale(1.05);
+    }
+    .floating-help {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--yellow, #f6be12);
+      color: var(--black, #11100d);
+      font-size: 1.6rem;
+      font-weight: 800;
+      box-shadow: 0 8px 30px rgba(246,190,18,0.4);
+      text-decoration: none;
+      transition: transform 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .floating-help:hover {
+      transform: scale(1.05);
+      background: var(--red, #e22528);
+      color: #fff;
+    }
+
+    /* ===== MODAL VER PLATILLO ===== */
+    .product-view {
+      background: #fffdf6;
+      border-radius: 28px;
+      max-width: 420px;
+      width: 100%;
+      overflow: hidden;
+      animation: modalFade 0.3s ease;
+    }
+    .pv-image {
+      background: #f0ede4;
+      padding: 40px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .pv-image .pv-placeholder-icon {
+      font-size: 3.5rem;
+      opacity: 0.5;
+    }
+    .pv-image p {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #6f6758;
+    }
+    .pv-image small {
+      font-size: 0.8rem;
+      color: #9a9282;
+    }
+    .pv-body {
+      padding: 24px 28px 28px;
+    }
+    .pv-body h2 {
+      margin: 4px 0 10px;
+      font-size: 1.6rem;
+    }
+    .pv-desc {
+      color: #6f6758;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
 </head>
 <body class="menu-page">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -25,7 +224,7 @@
         <a href="#clasicas">Clásicas</a>
         <a href="#especialidades">Especialidades</a>
         <a href="#bebidas">Bebidas</a>
-        <a class="mini-cta" href="https://wa.me/529961120401?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20El%20Rey%20del%20Peperoni" target="_blank" rel="noopener">WhatsApp</a>
+        
       </nav>
     </div>
   </header>
@@ -44,7 +243,7 @@
     </section>
 
     <div class="sample-prices-banner">
-      <div class="container"><span>⚠️</span><p><strong>Menú de demostración:</strong> los productos y precios son ejemplos. El negocio deberá sustituirlos por su carta oficial.</p></div>
+      <div class="container"><span>⚠️</span><p><strong>Menú de demostración:</strong> los productos y precios son ejemplos.</p></div>
     </div>
 
     <nav class="quick-nav-wrap" aria-label="Categorías del menú">
@@ -235,6 +434,13 @@
     <strong data-cart-total>$0</strong>
   </button>
 
+  <div class="floating-buttons-menu">
+    <a class="floating-whatsapp" href="https://wa.me/529961120401?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20El%20Rey%20del%20Peperoni" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </a>
+    <button class="floating-help" id="tutorialTrigger" aria-label="Ayuda" type="button">🎓</button>
+  </div>
+
   <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
   <aside class="cart-panel" id="cartPanel" aria-hidden="true" aria-label="Carrito de pedido">
     <div class="cart-header">
@@ -245,7 +451,7 @@
     <div class="cart-footer">
       <div class="cart-total-row"><span>Total aproximado</span><strong id="cartTotal">$0</strong></div>
       <p>Los precios son de ejemplo. Confirma el total final con el negocio.</p>
-      <button class="send-order" id="sendOrder" type="button">Enviar pedido por WhatsApp <span>→</span></button>
+      <button class="send-order" id="sendOrder" type="button">Enviar pedido Ahora <span>→</span></button>
       <button class="clear-cart" id="clearCart" type="button">Vaciar pedido</button>
     </div>
   </aside>
@@ -269,9 +475,112 @@
     </div>
   </div>
 
+  <!-- ===== MODAL VER PLATILLO ===== -->
+  <div class="modal-overlay" id="productViewModal" aria-hidden="true">
+    <div class="product-view" role="dialog" aria-modal="true" aria-labelledby="pvTitle">
+      <button class="modal-close" id="pvClose" type="button" aria-label="Cerrar">×</button>
+      <div class="pv-image">
+        <span class="pv-placeholder-icon">🍕</span>
+        <p>Acá estará la imagen del platillo</p>
+        <small>Cuando tengamos fotos reales, se mostrarán aquí.</small>
+      </div>
+      <div class="pv-body">
+        <p class="section-kicker" id="pvTag">Producto</p>
+        <h2 id="pvTitle">Nombre del producto</h2>
+        <p class="pv-desc" id="pvDesc">Descripción del producto.</p>
+      </div>
+    </div>
+  </div>
+
   <div class="toast" id="toast" role="status" aria-live="polite">Producto agregado al pedido</div>
+
+  <!-- ===== TUTORIAL ===== -->
+  <div class="tutorial-overlay" id="tutorialOverlay">
+    <div class="tutorial-card">
+      <div class="step-indicator" id="tutorialStepIndicator">Paso 1 de 4</div>
+      <span class="tutorial-icon" id="tutorialIcon">👆</span>
+      <h3 id="tutorialTitle">¡Bienvenido!</h3>
+      <p id="tutorialText">Aquí te explicamos cómo hacer tu pedido fácilmente.</p>
+      <div class="tutorial-actions">
+        <button class="btn-skip" id="tutorialSkip">Saltar</button>
+        <button class="btn-next" id="tutorialNext">Siguiente →</button>
+      </div>
+    </div>
+  </div>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/menu.js"></script>
+  <script>
+    (function() {
+      const tutorialOverlay = document.getElementById('tutorialOverlay');
+      const tutorialStepIndicator = document.getElementById('tutorialStepIndicator');
+      const tutorialIcon = document.getElementById('tutorialIcon');
+      const tutorialTitle = document.getElementById('tutorialTitle');
+      const tutorialText = document.getElementById('tutorialText');
+      const tutorialSkip = document.getElementById('tutorialSkip');
+      const tutorialNext = document.getElementById('tutorialNext');
+      const tutorialTrigger = document.getElementById('tutorialTrigger');
+
+      let tutorialStep = 0;
+      const TUTORIAL_STEPS = [
+        { icon: '🍕', title: 'Paso 1: Elige tu pizza', text: 'Busca la pizza o bebida que quieras y presiona el botón "Agregar al pedido" en cada tarjeta.' },
+        { icon: '📝', title: 'Paso 2: Personaliza', text: 'Elige la cantidad y escribe una nota si lo deseas (ej. mitad pepperoni, sin cebolla). Luego presiona "Agregar al pedido".' },
+        { icon: '🛒', title: 'Paso 3: Revisa tu pedido', text: 'Presiona "Mi pedido" (botón flotante abajo-centro) para revisar todo. Puedes eliminar productos si lo deseas.' },
+        { icon: '📲', title: 'Paso 4: Envía por WhatsApp', text: 'Cuando estés listo, presiona "Enviar pedido Ahora". ¡Tu mensaje se generará automáticamente!' }
+      ];
+
+      function showTutorial() {
+        tutorialStep = 0;
+        updateTutorialStep();
+        tutorialOverlay.classList.add('open');
+      }
+
+      function hideTutorial() {
+        tutorialOverlay.classList.remove('open');
+        localStorage.setItem('rey_del_peperoni_tutorial', 'done');
+      }
+
+      function updateTutorialStep() {
+        const step = TUTORIAL_STEPS[tutorialStep];
+        tutorialStepIndicator.textContent = 'Paso ' + (tutorialStep + 1) + ' de ' + TUTORIAL_STEPS.length;
+        tutorialIcon.textContent = step.icon;
+        tutorialTitle.textContent = step.title;
+        tutorialText.textContent = step.text;
+        if (tutorialStep === TUTORIAL_STEPS.length - 1) {
+          tutorialNext.textContent = '✅ Entendido';
+          tutorialNext.className = 'btn-done';
+        } else {
+          tutorialNext.textContent = 'Siguiente →';
+          tutorialNext.className = 'btn-next';
+        }
+      }
+
+      function nextTutorialStep() {
+        if (tutorialStep < TUTORIAL_STEPS.length - 1) {
+          tutorialStep++;
+          updateTutorialStep();
+        } else {
+          hideTutorial();
+        }
+      }
+
+      const tutorialShown = localStorage.getItem('rey_del_peperoni_tutorial');
+      if (!tutorialShown) {
+        setTimeout(showTutorial, 500);
+      }
+
+      tutorialTrigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (tutorialOverlay.classList.contains('open')) {
+          hideTutorial();
+        } else {
+          showTutorial();
+        }
+      });
+
+      tutorialSkip.addEventListener('click', hideTutorial);
+      tutorialNext.addEventListener('click', nextTutorialStep);
+    })();
+  </script>
 </body>
 </html>
