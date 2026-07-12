@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light only">
+  <title>Menú completo | El Rey del Peperoni</title>
+  <meta name="description" content="Menú de pizzas y bebidas de El Rey del Peperoni en Hopelchén. Arma tu pedido y envíalo por WhatsApp.">
+  <meta name="theme-color" content="#efb512">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="menu-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar menu-topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Volver al inicio de El Rey del Peperoni">
+        <img class="brand-logo" src="assets/img/logo-el-rey-del-peperoni.png" alt="">
+        <span class="brand-copy"><strong>El Rey del Peperoni</strong><small>Menú y pedidos</small></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">☰</button>
+      <nav class="nav-menu" id="navMenu" aria-label="Navegación">
+        <a href="index.html">← Página principal</a>
+        <a href="#clasicas">Clásicas</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#bebidas">Bebidas</a>
+        <a class="mini-cta" href="https://wa.me/529961120401?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20El%20Rey%20del%20Peperoni" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="full-menu">
+    <section class="menu-hero">
+      <div class="menu-hero-media" aria-hidden="true"></div>
+      <div class="menu-hero-shade" aria-hidden="true"></div>
+      <div class="container menu-hero-content">
+        <a class="back-link" href="index.html">← Volver a la página principal</a>
+        <p class="kicker"><span>🍕</span> Menú con pedido por WhatsApp</p>
+        <h1>Elige tus favoritas<br><em>y arma el pedido.</em></h1>
+        <p>Agrega pizzas y bebidas, indica la cantidad y escribe notas. Al finalizar, se abrirá WhatsApp con el mensaje ordenado.</p>
+        <button class="btn btn-primary hero-cart-trigger" type="button" data-open-cart>Ver mi pedido <span data-cart-count>0</span></button>
+      </div>
+    </section>
+
+    <div class="sample-prices-banner">
+      <div class="container"><span>⚠️</span><p><strong>Menú de demostración:</strong> los productos y precios son ejemplos. El negocio deberá sustituirlos por su carta oficial.</p></div>
+    </div>
+
+    <nav class="quick-nav-wrap" aria-label="Categorías del menú">
+      <div class="container quick-nav">
+        <a href="#clasicas">Pizzas clásicas</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#combinaciones">Combinaciones</a>
+        <a href="#plebeyas">Pizzas Plebeyo's</a>
+        <a href="#bebidas">Bebidas</a>
+      </div>
+    </nav>
+
+    <div class="container menu-content">
+      <div class="menu-toolbar">
+        <div><p class="section-kicker">Menú completo</p><h2>¿Qué se te antoja?</h2></div>
+        <label class="menu-search"><span>⌕</span><input id="menuSearch" type="search" placeholder="Buscar pizza o ingrediente" autocomplete="off"></label>
+      </div>
+
+      <section class="menu-category" id="clasicas">
+        <div class="category-banner">
+          <img src="assets/img/pizza-peperoni-clasica.webp" alt="Pizza clásica de pepperoni">
+          <div class="category-banner-shade"></div>
+          <div class="category-head"><span>01</span><div><h2>Pizzas clásicas</h2><p>Las favoritas de siempre, recién horneadas.</p></div></div>
+        </div>
+        <div class="menu-items">
+          <article class="menu-item-card" data-search="pizza pepperoni queso salsa clásica" data-name="Pizza de pepperoni" data-price="180">
+            <div class="item-top"><div><span class="item-tag">CLÁSICA</span><h3>Pizza de pepperoni</h3></div><strong class="price-pill">$180</strong></div>
+            <p>Salsa de tomate, queso y abundante pepperoni.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="pizza jamón queso salsa clásica" data-name="Pizza de jamón" data-price="180">
+            <div class="item-top"><div><span class="item-tag">CLÁSICA</span><h3>Pizza de jamón</h3></div><strong class="price-pill">$180</strong></div>
+            <p>Salsa de tomate, queso y jamón.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="pizza salchicha queso salsa clásica" data-name="Pizza de salchicha" data-price="180">
+            <div class="item-top"><div><span class="item-tag">CLÁSICA</span><h3>Pizza de salchicha</h3></div><strong class="price-pill">$180</strong></div>
+            <p>Salsa de tomate, queso y salchicha.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="pizza salami queso salsa clásica" data-name="Pizza de salami" data-price="190">
+            <div class="item-top"><div><span class="item-tag">CLÁSICA</span><h3>Pizza de salami</h3></div><strong class="price-pill">$190</strong></div>
+            <p>Salsa de tomate, queso y salami.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="pizza champiñones queso vegetariana" data-name="Pizza de champiñones" data-price="195">
+            <div class="item-top"><div><span class="item-tag">CLÁSICA</span><h3>Pizza de champiñones</h3></div><strong class="price-pill">$195</strong></div>
+            <p>Queso, salsa de tomate y champiñones.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="pizza hawaiana jamón piña queso" data-name="Pizza hawaiana" data-price="210">
+            <div class="item-top"><div><span class="item-tag">CLÁSICA</span><h3>Pizza hawaiana</h3></div><strong class="price-pill">$210</strong></div>
+            <p>Jamón, piña, queso y salsa de tomate.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-category" id="especialidades">
+        <div class="category-banner">
+          <img src="assets/img/pizza-rey-peperoni-chorizo.webp" alt="Pizza especial con pepperoni y chorizo">
+          <div class="category-banner-shade"></div>
+          <div class="category-head"><span>02</span><div><h2>Especialidades del reino</h2><p>Combinaciones con más ingredientes y mucho sabor.</p></div></div>
+        </div>
+        <div class="menu-items">
+          <article class="menu-item-card featured-item" data-search="rey pepperoni chorizo queso especial" data-name="Pizza El Rey del Peperoni" data-price="240">
+            <div class="item-top"><div><span class="item-tag crown">👑 DE LA CASA</span><h3>El Rey del Peperoni</h3></div><strong class="price-pill">$240</strong></div>
+            <p>Pepperoni, chorizo, extra queso y el toque de la casa.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="mexicana jamón chorizo cebolla chile queso" data-name="Pizza mexicana" data-price="220">
+            <div class="item-top"><div><span class="item-tag">ESPECIAL</span><h3>Pizza mexicana</h3></div><strong class="price-pill">$220</strong></div>
+            <p>Jamón, chorizo, cebolla, chile y queso.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="carnes frías pepperoni jamón salami salchicha" data-name="Pizza de carnes frías" data-price="235">
+            <div class="item-top"><div><span class="item-tag">ESPECIAL</span><h3>Carnes frías</h3></div><strong class="price-pill">$235</strong></div>
+            <p>Pepperoni, jamón, salami, salchicha y queso.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="vegetariana champiñones cebolla pimiento jalapeño" data-name="Pizza vegetariana" data-price="215">
+            <div class="item-top"><div><span class="item-tag">ESPECIAL</span><h3>Vegetariana</h3></div><strong class="price-pill">$215</strong></div>
+            <p>Champiñones, cebolla, pimiento, jalapeño y queso.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="champiñones chorizo queso" data-name="Pizza de champiñones con chorizo" data-price="225">
+            <div class="item-top"><div><span class="item-tag">ESPECIAL</span><h3>Champiñones con chorizo</h3></div><strong class="price-pill">$225</strong></div>
+            <p>Champiñones, chorizo, queso y salsa de tomate.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="suprema pepperoni jamón champiñones pimiento cebolla" data-name="Pizza suprema" data-price="245">
+            <div class="item-top"><div><span class="item-tag">ESPECIAL</span><h3>Pizza suprema</h3></div><strong class="price-pill">$245</strong></div>
+            <p>Pepperoni, jamón, champiñones, pimiento y cebolla.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-category" id="combinaciones">
+        <div class="category-banner">
+          <img src="assets/img/pizza-cuatro-sabores.webp" alt="Pizza de cuatro sabores">
+          <div class="category-banner-shade"></div>
+          <div class="category-head"><span>03</span><div><h2>Combinaciones</h2><p>Varias opciones para que todos elijan.</p></div></div>
+        </div>
+        <div class="menu-items">
+          <article class="menu-item-card" data-search="mitad y mitad dos sabores combinación" data-name="Pizza mitad y mitad" data-price="220">
+            <div class="item-top"><div><span class="item-tag">COMBINA</span><h3>Mitad y mitad</h3></div><strong class="price-pill">$220</strong></div>
+            <p>Elige dos sabores disponibles. Escríbelos en la nota del pedido.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="cuatro sabores familiar combinación" data-name="Pizza de cuatro sabores" data-price="250">
+            <div class="item-top"><div><span class="item-tag">COMBINA</span><h3>Cuatro sabores</h3></div><strong class="price-pill">$250</strong></div>
+            <p>Cuatro secciones para compartir entre todos.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="dos ingredientes pizza combinación" data-name="Pizza de dos ingredientes" data-price="205">
+            <div class="item-top"><div><span class="item-tag">COMBINA</span><h3>Dos ingredientes</h3></div><strong class="price-pill">$205</strong></div>
+            <p>Elige dos ingredientes disponibles y agrégalos en la nota.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-category" id="plebeyas">
+        <div class="category-banner icon-banner">
+          <div class="category-icon">🍕</div>
+          <div class="category-head"><span>04</span><div><h2>Pizzas Plebeyo's</h2><p>Opciones sencillas para un antojo rápido.</p></div></div>
+        </div>
+        <div class="menu-items">
+          <article class="menu-item-card" data-search="plebeyo personal un ingrediente sencilla" data-name="Pizza Plebeyo's de 1 ingrediente" data-price="95">
+            <div class="item-top"><div><span class="item-tag">PERSONAL</span><h3>Plebeyo's: 1 ingrediente</h3></div><strong class="price-pill">$95</strong></div>
+            <p>Pizza sencilla con un ingrediente a elegir.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="plebeyo personal dos ingredientes sencilla" data-name="Pizza Plebeyo's de 2 ingredientes" data-price="115">
+            <div class="item-top"><div><span class="item-tag">PERSONAL</span><h3>Plebeyo's: 2 ingredientes</h3></div><strong class="price-pill">$115</strong></div>
+            <p>Pizza sencilla con dos ingredientes a elegir.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-category" id="bebidas">
+        <div class="category-banner icon-banner drinks-banner">
+          <div class="category-icon">🥤</div>
+          <div class="category-head"><span>05</span><div><h2>Bebidas</h2><p>Para acompañar tu pizza.</p></div></div>
+        </div>
+        <div class="menu-items">
+          <article class="menu-item-card" data-search="refresco 600 ml bebida" data-name="Refresco de 600 ml" data-price="30">
+            <div class="item-top"><div><span class="item-tag">BEBIDA</span><h3>Refresco 600 ml</h3></div><strong class="price-pill">$30</strong></div>
+            <p>Sabor sujeto a disponibilidad.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="refresco 1.5 litros bebida familiar" data-name="Refresco de 1.5 L" data-price="55">
+            <div class="item-top"><div><span class="item-tag">BEBIDA</span><h3>Refresco 1.5 L</h3></div><strong class="price-pill">$55</strong></div>
+            <p>Sabor sujeto a disponibilidad.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+          <article class="menu-item-card" data-search="agua purificada botella bebida" data-name="Agua purificada" data-price="20">
+            <div class="item-top"><div><span class="item-tag">BEBIDA</span><h3>Agua purificada</h3></div><strong class="price-pill">$20</strong></div>
+            <p>Botella individual.</p>
+            <button class="item-add" type="button">Agregar al pedido <span>＋</span></button>
+          </article>
+        </div>
+      </section>
+
+      <div class="no-results" id="noResults" hidden><span>🍕</span><h3>No encontramos esa opción</h3><p>Prueba buscando “pepperoni”, “jamón” o “bebida”.</p></div>
+
+      <section class="menu-bottom-cta">
+        <img src="assets/img/logo-el-rey-del-peperoni.png" alt="" aria-hidden="true">
+        <div><p>¿Terminaste de elegir?</p><h2>Revisa el pedido y envíalo por WhatsApp.</h2></div>
+        <button class="btn btn-primary" type="button" data-open-cart>Ver mi pedido <span data-cart-count>0</span></button>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <a class="footer-brand" href="index.html"><img src="assets/img/logo-el-rey-del-peperoni.png" alt=""><span><strong>El Rey del Peperoni</strong><small>Anhela el sabor, ama la pizza.</small></span></a>
+      <div class="footer-links"><a href="index.html">Inicio</a><a href="#clasicas">Clásicas</a><a href="#especialidades">Especialidades</a><a href="#bebidas">Bebidas</a></div>
+      <p>Precios de ejemplo para demostración.</p>
+    </div>
+  </footer>
+
+  <button class="cart-floating" id="cartFloating" type="button" data-open-cart aria-label="Abrir pedido">
+    <span class="cart-floating-icon">🛒</span>
+    <span class="cart-floating-copy"><b>Mi pedido</b><small><span data-cart-count>0</span> productos</small></span>
+    <strong data-cart-total>$0</strong>
+  </button>
+
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-panel" id="cartPanel" aria-hidden="true" aria-label="Carrito de pedido">
+    <div class="cart-header">
+      <div><small>TU SELECCIÓN</small><h2>Mi pedido</h2></div>
+      <button id="cartClose" type="button" aria-label="Cerrar pedido">×</button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row"><span>Total aproximado</span><strong id="cartTotal">$0</strong></div>
+      <p>Los precios son de ejemplo. Confirma el total final con el negocio.</p>
+      <button class="send-order" id="sendOrder" type="button">Enviar pedido por WhatsApp <span>→</span></button>
+      <button class="clear-cart" id="clearCart" type="button">Vaciar pedido</button>
+    </div>
+  </aside>
+
+  <div class="modal-overlay" id="itemModal" aria-hidden="true">
+    <div class="item-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Cerrar">×</button>
+      <p class="section-kicker">Agregar al pedido</p>
+      <h2 id="modalTitle">Producto</h2>
+      <p class="modal-price" id="modalPrice">$0</p>
+      <label class="quantity-label">Cantidad</label>
+      <div class="quantity-control">
+        <button id="qtyMinus" type="button" aria-label="Quitar uno">−</button>
+        <input id="qtyInput" type="number" min="1" max="20" value="1" inputmode="numeric">
+        <button id="qtyPlus" type="button" aria-label="Agregar uno">＋</button>
+      </div>
+      <label class="note-label" for="itemNote">Nota para este producto <small>(opcional)</small></label>
+      <textarea id="itemNote" rows="3" placeholder="Ej. mitad pepperoni y mitad mexicana, sin cebolla, etc."></textarea>
+      <div class="modal-subtotal"><span>Subtotal</span><strong id="modalSubtotal">$0</strong></div>
+      <button class="modal-confirm" id="modalConfirm" type="button">Agregar al pedido</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Producto agregado al pedido</div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>
