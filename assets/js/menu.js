@@ -145,7 +145,6 @@
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    setTimeout(() => qtyInput.focus(), 50);
   }
 
   function closeProductModal() {
